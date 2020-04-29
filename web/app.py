@@ -16,9 +16,12 @@ def defError(status, msg):
     return { "status":status, "msg":msg}
 
 def getPasswd(username):
-    return cust.find({
+    # Update to check git
+    ret1 = cust.find({
         "username":username
     })[0]["password"]
+    return ret1
+
 
 class Register(Resource):
     def post(self):
